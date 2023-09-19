@@ -1,21 +1,12 @@
-import styles from "./page.module.css";
-import Link from "next/link";
-import EditIcon from "@mui/icons-material/Edit";
+import "./globals.css";
+import "bootstrap/dist/css/bootstrap.css";
+
+import { Header } from "@/components/Header.component";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <div className="">
-          {process.env.NODE_ENV === "development" && (
-            <Link href="/studio">
-              <button>
-                <EditIcon />
-              </button>
-            </Link>
-          )}
-        </div>
-      </div>
-    </main>
+    <>
+      <Header />
+    </>
   );
 }
