@@ -16,9 +16,13 @@ interface InventoryProduct {
 
 export interface SanityProduct extends Omit<InventoryProduct, "images"> {
   _id: string;
-  _createdAt: Date;
-  slug: string;
+  _createdAt: string;
+  name: string;
+  sku: string;
   images: Image[];
+  currency: string;
+  price: number;
+  slug: string;
 }
 
 export const inventory: InventoryProduct[] = [];

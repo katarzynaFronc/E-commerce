@@ -1,3 +1,5 @@
+"use client";
+
 import { groq } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import "./globals.css";
@@ -5,19 +7,28 @@ import "bootstrap/dist/css/bootstrap.css";
 import { siteConfig } from "../../config/site";
 import { ProductGrid } from "@/components/ProductGrid.component";
 import { SanityProduct } from "../../config/inventory";
+import { useEffect, useState } from "react";
 
-export default async function Home() {
-  const products = await client.fetch<SanityProduct[]>(groq`*[_type == "product"] {
-              _id,
-              _createdAt,
-              name,
-              sku,
-              images,
-              currency,
-              price,
-              "slug": slug.current
-  }`);
-  console.log(products);
+export default function Home() {
+  const [products, setProducts] = useState<SanityProduct[]>([]);
+
+  useEffect(() => {
+    client
+      .fetch<SanityProduct[]>(
+        groq`*[_type == "product"] {
+    _id,
+    _createdAt,
+    name,
+    sku,
+    images,
+    currency,
+    price,
+    "slug": slug.current
+}`
+      )
+      .then((data: SanityProduct[]) => setProducts(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <div>
