@@ -4,6 +4,7 @@ import { client } from "../../sanity/lib/client";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { siteConfig } from "../../config/site";
+import { ProductGrid } from "@/components/ProductGrid.component";
 
 export default async function Home() {
   const products = await client.fetch<SanityProduct[]>(groq`*[_type == "product"] {
@@ -41,6 +42,7 @@ export default async function Home() {
             <div>
               <div className="hidden lg:block">{/* Product filters */}</div>
               {/* Product grid */}
+              <ProductGrid products={products} />
             </div>
           </section>
         </main>
