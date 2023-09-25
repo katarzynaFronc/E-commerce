@@ -10,13 +10,24 @@ import { SanityProduct } from "../../config/inventory";
 import { useEffect, useState } from "react";
 import { ProductSort } from "@/components/ProductSort.component";
 
-export default function Home() {
+interface Props {
+  searchParams: {
+    date?: string;
+    price?: number;
+  };
+}
+
+export default function Home({ searchParams }: Props) {
+  const { date, price } = searchParams;
+  const priceOrder = price ? `| order(price ${price})` : "";
+  const dateOrder = date ? `| order(_createdAt ${date})` : "";
+  const order = `${priceOrder}${dateOrder}`;
   const [products, setProducts] = useState<SanityProduct[]>([]);
 
   useEffect(() => {
     client
       .fetch<SanityProduct[]>(
-        groq`*[_type == "product"] {
+        groq`*[_type == "product"] ${order} {
     _id,
     _createdAt,
     name,
