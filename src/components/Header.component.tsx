@@ -9,7 +9,7 @@ export const Header = () => {
   if (pathname?.startsWith("/studio")) return null;
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Scrap Store

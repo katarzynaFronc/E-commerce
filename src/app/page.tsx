@@ -8,6 +8,7 @@ import { siteConfig } from "../../config/site";
 import { ProductGrid } from "@/components/ProductGrid.component";
 import { SanityProduct } from "../../config/inventory";
 import { useEffect, useState } from "react";
+import { ProductSort } from "@/components/ProductSort.component";
 
 export default function Home() {
   const [products, setProducts] = useState<SanityProduct[]>([]);
@@ -43,13 +44,12 @@ export default function Home() {
               {" "}
               {products.length} product{products.length === 1 ? "" : "s"}
             </h1>
-            {/* Product Sort */}
+            <ProductSort />
           </div>
 
           <section aria-labelledby="products-heading" className="pb-24 pt-6">
             <div>
               <div className="hidden lg:block">{/* Product filters */}</div>
-
               <ProductGrid products={products} />
             </div>
           </section>
