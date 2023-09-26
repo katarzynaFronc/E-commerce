@@ -9,6 +9,7 @@ import { ProductGrid } from "@/components/ProductGrid.component";
 import { SanityProduct } from "../../config/inventory";
 import { useEffect, useState } from "react";
 import { ProductSort } from "@/components/ProductSort.component";
+import { ProductFilter } from "@/components/ProductFilter.component";
 
 interface Props {
   searchParams: {
@@ -50,7 +51,7 @@ export default function Home({ searchParams }: Props) {
       </div>
       <div>
         <main className="mx-auto w-75 max-w-6xl px-6">
-          <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
+          <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-2 pt-24 dark:border-gray-800  border-bottom">
             <h4 className="text-xl font-bold tracking-tight sm:text-2xl">
               {" "}
               {products.length} product{products.length === 1 ? "" : "s"}
@@ -58,10 +59,14 @@ export default function Home({ searchParams }: Props) {
             <ProductSort />
           </div>
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            <div>
-              <div className="hidden lg:block">{/* Product filters */}</div>
-              <ProductGrid products={products} />
+          <section aria-labelledby="products-heading" className="container pt-4">
+            <div className="row gap-3">
+              <div className="col-md-3">
+                <ProductFilter />
+              </div>
+              <div className="col">
+                <ProductGrid products={products} />
+              </div>
             </div>
           </section>
         </main>
