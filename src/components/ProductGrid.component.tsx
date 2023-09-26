@@ -13,9 +13,9 @@ export const ProductGrid = ({ products }: Props) => {
   }
 
   return (
-    <div className="row">
+    <div className="d-flex flex-wrap justify-content-center justify-content-sm-between gap-5">
       {products.map((product) => (
-        <div key={product._id} className="col-sm-6 col-md-4">
+        <div key={product._id}>
           <div className="card" style={{ width: 225, height: 450 }}>
             <img src={urlForImage(product.images[0]).url()} className="card-img-top" alt={product.name} />
             <div className="card-body">

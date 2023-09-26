@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-around">
         <a className="navbar-brand" href="#">
           Scrap Store
         </a>

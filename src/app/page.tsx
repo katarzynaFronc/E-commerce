@@ -49,12 +49,12 @@ export default function Home({ searchParams }: Props) {
         <p className="mx-auto mt-4 max-w-3xl text-base">{siteConfig.description}</p>
       </div>
       <div>
-        <main className="mx-auto max-w-6xl px-6">
-          <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
-            <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
+        <main className="mx-auto w-75 max-w-6xl px-6">
+          <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
+            <h4 className="text-xl font-bold tracking-tight sm:text-2xl">
               {" "}
               {products.length} product{products.length === 1 ? "" : "s"}
-            </h1>
+            </h4>
             <ProductSort />
           </div>
 
