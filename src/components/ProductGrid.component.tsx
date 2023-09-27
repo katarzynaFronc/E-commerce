@@ -13,7 +13,7 @@ export const ProductGrid = ({ products }: Props) => {
   }
 
   return (
-    <div className="d-flex flex-wrap justify-content-center justify-content-sm-between gap-5">
+    <div className="d-flex flex-wrap justify-content-center justify-content-sm-between gap-3">
       {products.map((product) => (
         <div key={product._id}>
           <div className="card" style={{ width: 225, height: 450 }}>
