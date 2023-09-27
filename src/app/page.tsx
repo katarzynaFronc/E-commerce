@@ -18,11 +18,12 @@ interface Props {
     size?: string;
     category?: string;
     themes?: string;
+    search?: string;
   };
 }
 
 export default function Home({ searchParams }: Props) {
-  const { date, price, category, themes, size } = searchParams;
+  const { date, price, category, themes, size, search } = searchParams;
   const priceOrder = price ? `| order(price ${price})` : "";
   const dateOrder = date ? `| order(_createdAt ${date})` : "";
   const order = `${priceOrder}${dateOrder}`;
@@ -31,8 +32,9 @@ export default function Home({ searchParams }: Props) {
   const categoryFilter = category ? `&& "${category}" in categories` : "";
   const themesFilter = themes ? `&& "${themes}" in themes` : "";
   const sizeFilter = size ? `&& "${size}" in sizes` : "";
+  const searchFilter = search ? `&& name match "*${search}*"` : "";
 
-  const filter = `*[${productFilter}${categoryFilter}${themesFilter}${sizeFilter}]`;
+  const filter = `*[${productFilter}${categoryFilter}${themesFilter}${sizeFilter}${searchFilter}]`;
 
   const [products, setProducts] = useState<SanityProduct[]>([]);
 
