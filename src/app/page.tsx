@@ -15,33 +15,44 @@ interface Props {
   searchParams: {
     date?: string;
     price?: number;
+    size?: string;
+    category?: string;
+    themes?: string;
   };
 }
 
 export default function Home({ searchParams }: Props) {
-  const { date, price } = searchParams;
+  const { date, price, category, themes, size } = searchParams;
   const priceOrder = price ? `| order(price ${price})` : "";
   const dateOrder = date ? `| order(_createdAt ${date})` : "";
   const order = `${priceOrder}${dateOrder}`;
+
+  const productFilter = `_type == "product"`;
+  const categoryFilter = category ? `&& "${category}" in categories` : "";
+  const themesFilter = themes ? `&& "${themes}" in themes` : "";
+  const sizeFilter = size ? `&& "${size}" in sizes` : "";
+
+  const filter = `*[${productFilter}${categoryFilter}${themesFilter}${sizeFilter}]`;
+
   const [products, setProducts] = useState<SanityProduct[]>([]);
 
   useEffect(() => {
     client
       .fetch<SanityProduct[]>(
-        groq`*[_type == "product"] ${order} {
-    _id,
-    _createdAt,
-    name,
-    sku,
-    images,
-    currency,
-    price,
-    "slug": slug.current
-}`
+        groq`${filter} ${order} {
+      _id,
+      _createdAt,
+      name,
+      sku,
+      images,
+      currency,
+      price,
+      "slug": slug.current
+  }`
       )
       .then((data: SanityProduct[]) => setProducts(data))
       .catch(console.error);
-  }, []);
+  }, [filter, order]);
 
   return (
     <div>

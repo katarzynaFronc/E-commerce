@@ -1,3 +1,4 @@
+"use client";
 import { Header } from "@/components/Header.component";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
