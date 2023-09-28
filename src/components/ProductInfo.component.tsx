@@ -1,14 +1,27 @@
 "use client";
 
-import { Button } from "react-bootstrap";
+import { Button, Toast } from "react-bootstrap";
 import { SanityProduct } from "../../config/inventory";
-import { formatCurrencyString } from "use-shopping-cart";
+import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
+import { useToast } from "./ui/use-toast";
+import Link from "next/link";
 
 interface Props {
   product: SanityProduct;
 }
 
 export const ProductInfo = ({ product }: Props) => {
+  const { addItem, incrementItem, cartDetails } = useShoppingCart();
+
+  const isInCart = !!cartDetails?.[product._id];
+
+  function addToCart() {
+    const item = {
+      ...product,
+    };
+    isInCart ? incrementItem(item._id) : addItem(item);
+  }
+
   return (
     <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
       <h1 className="text-3xl font-bold ">{product.name}</h1>
@@ -31,7 +44,7 @@ export const ProductInfo = ({ product }: Props) => {
 
       <form className="mt-6">
         <div className="mt-4 flex">
-          <Button type="button" className="w-full bg-violet-600 py-6 text-base font-medium text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500">
+          <Button type="button" onClick={() => addToCart()} className="w-full bg-violet-600 py-6 text-base font-medium text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500">
             Add to cart
           </Button>
         </div>
