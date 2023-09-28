@@ -2,22 +2,33 @@
 
 import Link from "next/link";
 import "../app/globals.css";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const defaultSearchQuery = searchParams?.get("search") ?? "";
+
   if (pathname?.startsWith("/studio")) return null;
+
+  const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const searchQuery = formData.get("search");
+    router.replace(`/?search=${searchQuery}`);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-fluid d-flex justify-content-around">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="">
           Scrap Store
         </a>
 
         <div className="" id="navbarSupportedContent">
-          <form className="d-flex" role="search">
-            <input className="form-control ms-2" type="search" placeholder="Search products..." aria-label="Search" />
+          <form onSubmit={onSubmit} className="d-flex" role="search">
+            <input id="search" name="search" className="form-control ms-2" type="search" placeholder="Search products..." aria-label="Search" defaultValue={defaultSearchQuery} />
             <button className="btn btn-primary" type="submit">
               Search
             </button>
