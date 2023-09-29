@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { CartProvider } from "use-shopping-cart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,11 +15,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const stripeKey = process.env.YOUR_STRIPE_PUBLIC_KEY as string;
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <CartProvider cartMode="checkout-session" stripe={stripeKey} currency="USD" shouldPersist={true}>
+          <Header />
+          {children}
+        </CartProvider>
+        ,
       </body>
     </html>
   );
