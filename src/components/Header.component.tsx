@@ -25,8 +25,8 @@ export const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-fluid d-flex justify-content-around">
-        <a className="navbar-brand" href="">
-          Scrap Store
+        <a className="navbar-brand" href="../">
+          <h3 className="mb-0">Scrap Store</h3>
         </a>
 
         <div className="" id="navbarSupportedContent">

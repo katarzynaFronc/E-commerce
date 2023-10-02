@@ -16,7 +16,7 @@ export const ProductGrid = ({ products }: Props) => {
   return (
     <div className="d-flex flex-wrap justify-content-center justify-content-sm-between gap-3">
       {products.map((product) => (
-        <Link key={product._id} href={`/product/${product.slug}`} className="group text-sm">
+        <Link key={product._id} href={`/product/${product.slug}`} className="group text-sm text-decoration-none">
           <div key={product._id}>
             <div className="card" style={{ width: 225, height: 400 }}>
               <img src={urlForImage(product.images[0]).url()} className="card-img-top" alt={product.name} />
