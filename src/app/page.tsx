@@ -58,8 +58,8 @@ export default function Home({ searchParams }: Props) {
 
   return (
     <div>
-      <div className="px-4 pt-20 text-center">
-        <h1 className="text-4xl font-extrabold tracking-normal">{siteConfig.name}</h1>
+      <div className="px-4 pt-20 mt-4 text-center">
+        <h3 className="text-4xl font-extrabold tracking-normal">{siteConfig.name}</h3>
         <p className="mx-auto mt-4 max-w-3xl text-base">{siteConfig.description}</p>
       </div>
       <div>

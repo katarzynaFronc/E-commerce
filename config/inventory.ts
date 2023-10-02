@@ -15,7 +15,7 @@ interface InventoryProduct {
 }
 
 export interface SanityProduct extends Omit<InventoryProduct, "images"> {
-  themes: string;
+  themes: string[];
   _id: string;
   _createdAt: string;
   name: string;

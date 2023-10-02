@@ -1,7 +1,6 @@
 import { groq } from "next-sanity";
 import { SanityProduct } from "../../../../config/inventory";
 import { client } from "../../../../sanity/lib/client";
-// import { ProductInfo } from "@/components/ProductInfo.component";
 import { ProductGallery } from "@/components/ProductGallery. component";
 import { ProductInfo } from "@/components/ProductInfo.component";
 
@@ -28,12 +27,10 @@ export default async function Page({ params }: Props) {
   }`);
 
   return (
-    <main className="mx-auto max-w-5xl sm:px-6 sm:pt-16 lg:px-8">
-      <div className="mx-auto max-w-2xl lg:max-w-none">
-        <div className="pb-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-12">
-          <ProductGallery />
-          <ProductInfo product={product} />
-        </div>
+    <main className="d-flex justify-content-center mb-3">
+      <div className="d-flex flex-column flex-md-row justify-content-center mt-5">
+        <ProductGallery product={product} />
+        <ProductInfo product={product} />
       </div>
     </main>
   );
