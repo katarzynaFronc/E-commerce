@@ -16,7 +16,7 @@ export function ProductGallery({ product }: Props) {
   return (
     <div className="d-flex flex-column">
       <div className="">
-        <img src={urlForImage(product.images[selectedImage]).url()} alt={`Main ${product.name} image`} width={300} height={400} className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg" />
+        <Image src={urlForImage(product.images[selectedImage]).url()} alt={`Main ${product.name} image`} width={300} height={400} className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg" />
       </div>
 
       <div className="mt-4">
@@ -24,12 +24,8 @@ export function ProductGallery({ product }: Props) {
           {product.images.map((image, index) => (
             <div key={image._key as string} onClick={() => setSelectedImage(index)} className="">
               <span className="">
-                <img src={urlForImage(image).url()} width={100} height={100} alt="" className="" />
+                <Image src={urlForImage(image).url()} width={100} height={100} alt="" className="" />
               </span>
-              {/* <span
-                  className="pointer-events-none absolute inset-0 rounded-md ring-4 ring-indigo-500 ring-offset-2"
-                  aria-hidden="true"
-                /> */}
             </div>
           ))}
         </ul>
