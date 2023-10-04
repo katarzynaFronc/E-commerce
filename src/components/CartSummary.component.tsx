@@ -1,7 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 
 export const CartSummary = () => {
+  const { formattedTotalPrice, totalPrice, cartDetails, cartCount } = useShoppingCart();
+  const [isLoading, setIsLoading] = useState(false);
+  const isDisabled = isLoading || cartCount! === 0;
+  const shippingAmount = cartCount! > 0 ? 500 : 0;
+  const totalAmoumt = totalPrice! + shippingAmount;
+
+  const onCheckout = () => {};
+
   return (
     <>
       <div className="border rounded-3 p-4">
@@ -9,21 +20,21 @@ export const CartSummary = () => {
         <dl>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
             <dt>Subtotal</dt>
-            <dd className="m-0">Subtotal Amount</dd>
+            <dd className="m-0">{formattedTotalPrice}</dd>
           </div>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
             <dt>Shipping estimate</dt>
-            <dd className="m-0">Shipping Amount</dd>
+            <dd className="m-0">{formatCurrencyString({ value: shippingAmount, currency: "EUR" })}</dd>
           </div>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
             <dt>Order total</dt>
-            <dd className="m-0">Order Amount</dd>
+            <dd className="m-0">{formatCurrencyString({ value: totalAmoumt, currency: "EUR" })}</dd>
           </div>
         </dl>
 
-        <Button className="w-full">
-          <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />
-          Loading...
+        <Button onClick={onCheckout} style={{ width: "100%" }} disabled={isDisabled}>
+          {isLoading && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />}
+          {isLoading ? "Loading..." : "Checkout"}
         </Button>
       </div>
     </>
