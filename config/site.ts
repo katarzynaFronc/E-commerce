@@ -1,8 +1,8 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "scrapbooking",
-  description: "digital scrapbooking and project life supplies",
+  name: "Scrapbooking",
+  description: "Digital scrapbooking and project life supplies",
   footer: [
     { name: "Home", href: "/" },
     { name: "About", href: "#" },
@@ -11,4 +11,4 @@ export const siteConfig = {
     { name: "Privacy Policy", href: "#" },
     { name: "FAQ", href: "#" },
   ],
-}
+};
