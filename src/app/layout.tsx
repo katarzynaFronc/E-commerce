@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <html>
         <body className={poppins.className}>
-          <CartProvider cartMode="checkout-session" stripe={stripeKey} currency="USD" shouldPersist={true}>
+          <CartProvider cartMode="checkout-session" stripe={stripeKey} currency="EUR" shouldPersist={true}>
             <Header />
             {children}
           </CartProvider>

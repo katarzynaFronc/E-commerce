@@ -60,14 +60,14 @@ export const ProductInfo = ({ product }: Props) => {
           </Button>
         </div>
         <ToastContainer position="bottom-end">
-          <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
+          <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide bg="info">
             <Toast.Header>
               <strong className="me-auto">{product.name}</strong>
               <Link href="/cart">
                 <Button>Open cart</Button>
               </Link>
             </Toast.Header>
-            <Toast.Body>The product has been added to your cart</Toast.Body>
+            <Toast.Body>Product added to cart</Toast.Body>
           </Toast>
         </ToastContainer>
       </form>
