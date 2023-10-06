@@ -25,9 +25,7 @@
     "bootstrap-icons": "^1.11.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
-
     "next": "^13.5.4",
-
     "next-sanity": "^5.5.4",
     "popper.js": "^1.16.1",
     "react": "18.2.0",
@@ -35,6 +33,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "^6.16.0",
     "sanity": "^3.16.7",
+    "stripe": "^13.9.0",
     "styled-components": "5.2",
     "typescript": "5.2.2",
     "use-shopping-cart": "^3.1.8"
