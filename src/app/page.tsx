@@ -1,5 +1,3 @@
-"use client";
-
 import { groq } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import "./globals.css";
@@ -22,39 +20,45 @@ interface Props {
   };
 }
 
-export default function Home({ searchParams }: Props) {
-  const { date, price, category, themes, size, search } = searchParams;
-  const priceOrder = price ? `| order(price ${price})` : "";
-  const dateOrder = date ? `| order(_createdAt ${date})` : "";
+export default async function Home({ searchParams }: Props) {
+  console.log(searchParams);
+
+  const priceOrder = searchParams.price ? `| order(price ${searchParams.price})` : "";
+  const dateOrder = searchParams.date ? `| order(_createdAt ${searchParams.date})` : "";
   const order = `${priceOrder}${dateOrder}`;
+  // const [products, setProducts] = useState<SanityProduct[]>([]);
 
-  const productFilter = `_type == "product"`;
-  const categoryFilter = category ? `&& "${category}" in categories` : "";
-  const themesFilter = themes ? `&& "${themes}" in themes` : "";
-  const sizeFilter = size ? `&& "${size}" in sizes` : "";
-  const searchFilter = search ? `&& name match "*${search}*"` : "";
+  const products = await client.fetch<SanityProduct[]>(groq`*[_type == "product"] ${order} {
+    _id,
+    _createdAt,
+    name,
+    sku,
+    images,
+    currency,
+    price,
+    description,
+    themes,
+    "slug": slug.current
+  }`);
 
-  const filter = `*[${productFilter}${categoryFilter}${themesFilter}${sizeFilter}${searchFilter}]`;
-
-  const [products, setProducts] = useState<SanityProduct[]>([]);
-
-  useEffect(() => {
-    client
-      .fetch<SanityProduct[]>(
-        groq`${filter} ${order} {
-      _id,
-      _createdAt,
-      name,
-      sku,
-      images,
-      currency,
-      price,
-      "slug": slug.current
-  }`
-      )
-      .then((data: SanityProduct[]) => setProducts(data))
-      .catch(console.error);
-  }, [filter, order]);
+  // useEffect(() => {
+  //   client
+  //     .fetch<SanityProduct[]>(
+  //       groq`{
+  //         date,
+  //     _id,
+  //     _createdAt,
+  //     name,
+  //     sku,
+  //     images,
+  //     currency,
+  //     price,
+  //     "slug": slug.current
+  // }`
+  //     )
+  //     .then((data: SanityProduct[]) => setProducts(data))
+  //     .catch(console.error);
+  // }, []);
 
   return (
     <div>

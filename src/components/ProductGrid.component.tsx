@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SanityProduct } from "../../config/inventory";
 import { urlForImage } from "../../sanity/lib/image";
 import { formatCurrencyString } from "use-shopping-cart";
+import { shimmer, toBase64 } from "../../lib/image";
 
 interface Props {
   products: SanityProduct[];
