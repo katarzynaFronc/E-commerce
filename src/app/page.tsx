@@ -20,7 +20,7 @@ interface Props {
 }
 
 export default async function Home({ searchParams }: Props) {
-  const { date = "desc", price, size, category, themes } = searchParams;
+  const { date = "desc", price, size, category, themes, search } = searchParams;
 
   const priceOrder = searchParams.price ? `| order(price ${searchParams.price})` : "";
   const dateOrder = searchParams.date ? `| order(_createdAt ${searchParams.date})` : "";
@@ -30,7 +30,8 @@ export default async function Home({ searchParams }: Props) {
   const categoryFilter = category ? `&& "${category}" in categories` : "";
   const sizeFilter = size ? `&& "${size}" in sizes` : "";
   const themeFilter = themes ? `&& "${themes}" in themes` : "";
-  const filter = `*[${productFilter}${categoryFilter}${sizeFilter}${themeFilter}]`;
+  const searchFilter = search ? `&& name match "${search}"` : "";
+  const filter = `*[${productFilter}${categoryFilter}${sizeFilter}${themeFilter}${searchFilter}]`;
 
   const products = await client.fetch<SanityProduct[]>(groq`${filter} ${order} {
     _id,
