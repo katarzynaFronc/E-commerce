@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { SanityProduct } from "../../config/inventory";
 import { urlForImage } from "../../sanity/lib/image";
 import { formatCurrencyString } from "use-shopping-cart";
@@ -15,15 +15,18 @@ export const ProductGrid = ({ products }: Props) => {
   }
 
   return (
-    <div className="d-flex flex-wrap justify-content-center justify-content-sm-between gap-3">
-      {products.map((product) => (
-        <Link key={product._id} href={`/product/${product.slug}`} className="group text-sm text-decoration-none">
-          <div key={product._id}>
-            <div className="card" style={{ width: 225, height: 400 }}>
-              <Image src={urlForImage(product.images[0]).url()} className="card-img-top" width={225} height={300} alt={product.name} />
-              <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text">
+    <div className="container-fluid">
+      <div className="row">
+        {products.map((product) => (
+          <div className="col-md-6 col-lg-4 col-xxl-3 gy-3" key={product._id}>
+            <Link key={product._id} href={`/product/${product.slug}`} className="text-decoration-none text-reset">
+              {/* <div className=""> */}
+              <picture className="border-3">
+                <img src={urlForImage(product.images[0]).url()} className="card-img-top" alt={product.name} />
+              </picture>
+              <div className="">
+                <h5>{product.name}</h5>
+                <p>
                   {" "}
                   {formatCurrencyString({
                     currency: product.currency,
@@ -31,10 +34,11 @@ export const ProductGrid = ({ products }: Props) => {
                   })}
                 </p>
               </div>
-            </div>
+              {/* </div> */}
+            </Link>
           </div>
-        </Link>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
