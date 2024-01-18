@@ -14,11 +14,6 @@ export const ProductSort = () => {
     <div className="flex items-center">
       <select
         className="form-select w-auto"
-        // onChange={(e) => {
-        //   const selectedValue = e.target.value;
-        //   router.push(selectedValue);
-        // }}
-
         onChange={(event) => {
           router.replace(event.target.value);
         }}

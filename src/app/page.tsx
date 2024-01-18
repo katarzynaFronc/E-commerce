@@ -26,7 +26,6 @@ export default async function Home({ searchParams }: Props) {
   const priceOrder = searchParams.price ? `| order(price ${searchParams.price})` : "";
   const dateOrder = searchParams.date ? `| order(_createdAt ${searchParams.date})` : "";
   const order = `${priceOrder}${dateOrder}`;
-  // const [products, setProducts] = useState<SanityProduct[]>([]);
 
   const products = await client.fetch<SanityProduct[]>(groq`*[_type == "product"] ${order} {
     _id,
@@ -40,25 +39,6 @@ export default async function Home({ searchParams }: Props) {
     themes,
     "slug": slug.current
   }`);
-
-  // useEffect(() => {
-  //   client
-  //     .fetch<SanityProduct[]>(
-  //       groq`{
-  //         date,
-  //     _id,
-  //     _createdAt,
-  //     name,
-  //     sku,
-  //     images,
-  //     currency,
-  //     price,
-  //     "slug": slug.current
-  // }`
-  //     )
-  //     .then((data: SanityProduct[]) => setProducts(data))
-  //     .catch(console.error);
-  // }, []);
 
   return (
     <div>
