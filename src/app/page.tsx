@@ -64,7 +64,7 @@ export default async function Home({ searchParams }: Props) {
 
           <section aria-labelledby="products-heading" className="container pt-4">
             <div className="row gap-3">
-              <div className="col-md-3">
+              <div className="col-md-4 col-lg-3">
                 <ProductFilter />
               </div>
               <div className="col">

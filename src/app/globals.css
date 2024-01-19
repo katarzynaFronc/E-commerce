@@ -19,6 +19,8 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --text-primary: 22, 22, 29;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -52,15 +54,14 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--background-end-rgb) !important;
+  color: var(--text-primary) !important;
   font-family: var(--font-family);
 }
 
-
-
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   html {

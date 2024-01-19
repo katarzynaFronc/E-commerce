@@ -44,7 +44,7 @@ export const ProductFilter = () => {
           <Accordion.Item eventKey={`item-${i}`}>
             <Accordion.Header>
               {section.name}
-              <small>{searchParams?.get(section.id) ? `(${searchParams.get(section.id)})` : ""}</small>
+              <small className="text-uppercase">{searchParams?.get(section.id) ? `(${searchParams.get(section.id)})` : ""}</small>
             </Accordion.Header>
             <Accordion.Body>
               <div className="space-y-4">
