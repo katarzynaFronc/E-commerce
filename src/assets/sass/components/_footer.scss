@@ -2,5 +2,12 @@
 
 .footer-container {
   height: 10rem;
+  width: 100vw;
   background-color: $custom-color-2;
+}
+
+.footer-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
 }
