@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "../app/globals.css";
+import "../assets/sass/style.css";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Button } from "react-bootstrap";
 import { useShoppingCart } from "use-shopping-cart";
