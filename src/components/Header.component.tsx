@@ -26,7 +26,9 @@ export const Header = () => {
     <nav className="navbar navbar-expand-lg border-bottom">
       <div className="container-fluid d-flex justify-content-around">
         <a className="navbar-brand" href="../">
-          <h3 className="mb-0">Scrap Store</h3>
+          <picture>
+            <img src="/icon/logo.png" alt="logo" className="navbar-brand-logo"></img>
+          </picture>
         </a>
 
         <div className="" id="navbarSupportedContent">
