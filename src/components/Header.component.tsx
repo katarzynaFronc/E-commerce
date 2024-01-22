@@ -7,20 +7,7 @@ import { SearchForm } from "./SearchForm.component";
 import { useShoppingCart } from "use-shopping-cart";
 
 export const Header = () => {
-  // const pathname = usePathname();
-  // const router = useRouter();
-  // const searchParams = useSearchParams();
   const { cartCount } = useShoppingCart();
-  // const defaultSearchQuery = searchParams?.get("search") ?? "";
-
-  // if (pathname?.startsWith("/studio")) return null;
-
-  // const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   const formData = new FormData(event.currentTarget);
-  //   const searchQuery = formData.get("search");
-  //   router.replace(`/?search=${searchQuery}`);
-  // };
 
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
@@ -30,7 +17,6 @@ export const Header = () => {
             <img src="/icon/logo.png" alt="logo" className="navbar-brand-logo"></img>
           </picture>
         </a>
-
         <SearchForm />
         <div className="">
           <Link href="/cart">

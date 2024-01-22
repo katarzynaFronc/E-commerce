@@ -1,12 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import { SanityProduct } from "../../config/inventory";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
-import ToastContainer from "react-bootstrap/ToastContainer";
-import Toast from "react-bootstrap/Toast";
-import Link from "next/link";
 import { AddToCardBtn } from "./AddToCardBtn.component";
 
 interface Props {
@@ -14,17 +10,9 @@ interface Props {
 }
 
 export const ProductInfo = ({ product }: Props) => {
-  const { addItem, incrementItem, cartDetails } = useShoppingCart();
-  const [show, setShow] = useState(false);
+  const { cartDetails } = useShoppingCart();
 
   const isInCart = !!cartDetails?.[product._id];
-
-  function addToCart() {
-    const item = {
-      ...product,
-    };
-    isInCart ? incrementItem(item._id) : addItem(item);
-  }
 
   return (
     <div className="px-md-4">

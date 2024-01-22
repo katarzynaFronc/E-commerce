@@ -21,8 +21,8 @@ export const SearchForm = () => {
   return (
     <div className="" id="navbarSupportedContent">
       <form onSubmit={onSubmit} className="d-flex" role="search">
-        <input id="search" name="search" className="form-control ms-2" type="search" placeholder="Search products..." aria-label="Search" defaultValue={defaultSearchQuery} />
-        <button className="btn btn-primary" type="submit">
+        <input id="search" name="search" className="form-control ms-2" type="text" placeholder="Search products..." aria-label="Search" defaultValue={defaultSearchQuery} />
+        <button className="searchBtn" type="submit">
           Search
         </button>
       </form>
