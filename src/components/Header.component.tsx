@@ -2,25 +2,25 @@
 
 import Link from "next/link";
 import "../assets/sass/style.css";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Button } from "react-bootstrap";
+import { SearchForm } from "./SearchForm.component";
 import { useShoppingCart } from "use-shopping-cart";
 
 export const Header = () => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const router = useRouter();
+  // const searchParams = useSearchParams();
   const { cartCount } = useShoppingCart();
-  const defaultSearchQuery = searchParams?.get("search") ?? "";
+  // const defaultSearchQuery = searchParams?.get("search") ?? "";
 
-  if (pathname?.startsWith("/studio")) return null;
+  // if (pathname?.startsWith("/studio")) return null;
 
-  const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const searchQuery = formData.get("search");
-    router.replace(`/?search=${searchQuery}`);
-  };
+  // const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const formData = new FormData(event.currentTarget);
+  //   const searchQuery = formData.get("search");
+  //   router.replace(`/?search=${searchQuery}`);
+  // };
 
   return (
     <nav className="navbar navbar-expand-lg border-bottom">
@@ -31,14 +31,7 @@ export const Header = () => {
           </picture>
         </a>
 
-        <div className="" id="navbarSupportedContent">
-          <form onSubmit={onSubmit} className="d-flex" role="search">
-            <input id="search" name="search" className="form-control ms-2" type="search" placeholder="Search products..." aria-label="Search" defaultValue={defaultSearchQuery} />
-            <button className="btn btn-primary" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+        <SearchForm />
         <div className="">
           <Link href="/cart">
             <Button size="sm" variant="ghost">
