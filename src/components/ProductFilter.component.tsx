@@ -47,7 +47,7 @@ export const ProductFilter = () => {
               <small className="text-uppercase">{searchParams?.get(section.id) ? `(${searchParams.get(section.id)})` : ""}</small>
             </Accordion.Header>
             <Accordion.Body>
-              <div className="space-y-4">
+              <div>
                 {section.options.map((option, optionIdx) => (
                   <div key={option.value} className="flex items-center space-x-2">
                     <input
