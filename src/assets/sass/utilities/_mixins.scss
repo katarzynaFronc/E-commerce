@@ -1,0 +1,10 @@
+@mixin primaryBtn {
+  background-color: $custom-color-3;
+  color: $primary-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $custom-color-2;
+  }
+}
