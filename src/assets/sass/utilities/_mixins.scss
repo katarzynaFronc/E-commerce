@@ -8,4 +8,12 @@
   &:hover {
     background-color: $custom-color-2;
   }
+
+  &:focus {
+    background-color: $custom-color-3;
+  }
+
+  &:active {
+    background-color: $custom-color-2 !important;
+  }
 }

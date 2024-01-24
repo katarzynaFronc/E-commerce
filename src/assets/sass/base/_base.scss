@@ -17,3 +17,14 @@ body {
   font-family: $main-font !important;
   color: $secondary-color;
 }
+
+.custom-color {
+  fill: $custom-color-1;
+  color: $custom-color-1;
+  font-weight: bold;
+}
+
+.custom-stroke {
+  stroke: $custom-color-1;
+  stroke-width: 1;
+}

@@ -18,7 +18,7 @@ export const ProductCard = ({ product }: Props) => {
         </picture>
         <div className="pt-2">
           <h5 className="text-center">{product.name}</h5>
-          <p className="text-center">
+          <p className="text-center custom-color">
             {" "}
             {formatCurrencyString({
               currency: product.currency,

@@ -18,7 +18,7 @@ export const ProductInfo = ({ product }: Props) => {
     <div className="px-md-4">
       <h3 className="text-3xl font-bold ">{product.name}</h3>
       <div className="mt-3">
-        <p className="text-3xl tracking-tight" suppressHydrationWarning>
+        <p className="text-3xl tracking-tight custom-color" suppressHydrationWarning>
           {formatCurrencyString({
             currency: product.currency,
             value: product.price,

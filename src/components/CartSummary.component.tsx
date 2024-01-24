@@ -30,11 +30,10 @@ export const CartSummary = () => {
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
             <dt>Order total</dt>
             <dd className="m-0">{formatCurrencyString({ value: totalAmoumt, currency: "PLN" })}</dd>
-
           </div>
         </dl>
 
-        <Button onClick={onCheckout} style={{ width: "100%" }} disabled={isDisabled}>
+        <Button onClick={onCheckout} style={{ width: "100%" }} disabled={isDisabled} className="checkoutBtn">
           {isLoading && <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />}
           {isLoading ? "Loading..." : "Checkout"}
         </Button>
