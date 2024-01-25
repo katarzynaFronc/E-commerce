@@ -16,4 +16,8 @@
   &:active {
     background-color: $custom-color-2 !important;
   }
+
+  &:disabled {
+    background-color: $custom-color-2 !important;
+  }
 }

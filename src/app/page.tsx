@@ -49,16 +49,16 @@ export default async function Home({ searchParams }: Props) {
   return (
     <div>
       <div className="px-4 pt-20 mt-4 text-center">
-        <h3 className="text-4xl font-extrabold tracking-normal">{siteConfig.name}</h3>
-        <p className="mx-auto mt-4 max-w-3xl text-base">{siteConfig.description}</p>
+        <h1 className="fs-1 fw-bolder">{siteConfig.name}</h1>
+        <p className="fs-4 mx-auto mt-4 mb-4">{siteConfig.description}</p>
       </div>
       <div>
         <main className="mx-auto w-75 max-w-6xl px-6">
           <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-2 pt-24 dark:border-gray-800  border-bottom">
-            <h4 className="text-xl font-bold tracking-tight sm:text-2xl">
+            <p className="fs-5">
               {" "}
               {products.length} product{products.length === 1 ? "" : "s"}
-            </h4>
+            </p>
             <ProductSort />
           </div>
 

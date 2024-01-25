@@ -16,26 +16,29 @@ export const ProductInfo = ({ product }: Props) => {
 
   return (
     <div className="px-md-4">
-      <h3 className="text-3xl font-bold ">{product.name}</h3>
+      <p className="fs-5 fw-bold mt-2 mb-4">{product.name}</p>
       <div className="mt-3">
-        <p className="text-3xl tracking-tight custom-color" suppressHydrationWarning>
+        <p className="mb-4 custom-color" suppressHydrationWarning>
           {formatCurrencyString({
             currency: product.currency,
             value: product.price,
           })}
         </p>
-        <div className="">
-          Themes:
-          {product.themes.map((theme: string) => (
-            <p key={theme} className="p-0 m-0">
-              {theme}
-            </p>
+        <div className="d-flex mb-4">
+          <p className="fw-bold">Themes: </p>
+          {product.themes.map((theme: string, i: number) => (
+            <>
+              {i > 0 && ", "}
+              <p key={theme} className="ms-2">
+                {theme}
+              </p>
+            </>
           ))}
         </div>
-
-        <p className="pt-3">
-          Size: <strong>{product.sizes}</strong>
-        </p>
+        <div className="d-flex">
+          <p className="fw-bold">Size:</p>
+          <p>{product.sizes}</p>
+        </div>
       </div>
       <AddToCardBtn product={product} />
     </div>

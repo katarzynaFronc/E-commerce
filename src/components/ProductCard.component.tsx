@@ -17,8 +17,8 @@ export const ProductCard = ({ product }: Props) => {
           <img src={urlForImage(product.images[0]).url()} className="card-img-top" alt={product.name} />
         </picture>
         <div className="pt-2">
-          <h5 className="text-center">{product.name}</h5>
-          <p className="text-center custom-color">
+          <p className="fs-5 fw-bold mt-2 mb-2 text-center">{product.name}</p>
+          <p className="text-center custom-color mb-4">
             {" "}
             {formatCurrencyString({
               currency: product.currency,

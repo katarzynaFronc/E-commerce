@@ -15,21 +15,20 @@ export const CartSummary = () => {
 
   return (
     <>
-      <div className="border rounded-3 p-4">
-        <h5>Order summary</h5>
+      <div className="border rounded-3 p-3">
+        <p className="fs-5 fw-bold text-center">Order summary</p>
         <dl>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
-            <dt>Subtotal</dt>
-            <dd className="m-0">{formattedTotalPrice}</dd>
+            <dt className="fs-6">Subtotal</dt>
+            <dd className="ms-4 fw-bold">{formattedTotalPrice}</dd>
           </div>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
-            <dt>Shipping estimate</dt>
-
-            <dd className="m-0">{formatCurrencyString({ value: shippingAmount, currency: "PLN" })}</dd>
+            <dt className="fs-6">Shipping estimate</dt>
+            <dd className="ms-4 fw-bold">{formatCurrencyString({ value: shippingAmount, currency: "PLN" })}</dd>
           </div>
           <div className="d-flex align-items-center justify-content-between border-bottom p-3">
-            <dt>Order total</dt>
-            <dd className="m-0">{formatCurrencyString({ value: totalAmoumt, currency: "PLN" })}</dd>
+            <dt className="fs-6">Order total</dt>
+            <dd className="ms-4 fw-bold">{formatCurrencyString({ value: totalAmoumt, currency: "PLN" })}</dd>
           </div>
         </dl>
 

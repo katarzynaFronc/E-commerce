@@ -49,7 +49,7 @@ export const ProductFilter = () => {
             <Accordion.Body>
               <div>
                 {section.options.map((option, optionIdx) => (
-                  <div key={option.value} className="flex items-center space-x-2">
+                  <div key={option.value} className="d-flex align-items-center px-2 py-1">
                     <input
                       type="checkbox"
                       className="form-check-input"

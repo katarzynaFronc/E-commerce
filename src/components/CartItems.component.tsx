@@ -31,10 +31,10 @@ export const Cartitems = () => {
             <Image src={urlForImage(product.images[0]).url()} alt={`Main ${product.name} image`} width={100} height={150} className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg" />
           </div>
           <div className="d-flex flex-column align-items-end">
-            <Link href={`/product/${product.slug}`} className="text-sm text-decoration-none">
+            <Link href={`/product/${product.slug}`} className="fs-5 fw-bold mt-2 mb-4 text-decoration-none custom-color-title">
               {product.name}
             </Link>
-            <p>
+            <p className="mb-4 custom-color">
               {" "}
               {formatCurrencyString({
                 currency: product.currency,

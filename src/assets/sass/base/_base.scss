@@ -15,7 +15,12 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: $main-font !important;
-  color: $secondary-color;
+  color: $custom-color-3;
+  // font-size: 62.5%;
+}
+
+.custom-color-title {
+  color: $custom-color-3;
 }
 
 .custom-color {
