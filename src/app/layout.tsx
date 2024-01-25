@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../assets/sass/style.css";
 
 import { CartProvider } from "use-shopping-cart";
+import { Footer } from "@/components/Footer.component";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string;
@@ -18,8 +19,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html>
         <body>
           <CartProvider cartMode="checkout-session" stripe={stripeKey} currency="PLN" shouldPersist={true}>
-            <Header />
-            {children}
+            <div className="page-wrapper">
+              <Header />
+              {children}
+              <div className="mt-auto">
+                <Footer />
+              </div>
+            </div>
           </CartProvider>
         </body>
       </html>

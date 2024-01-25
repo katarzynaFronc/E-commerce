@@ -13,10 +13,10 @@
 html,
 body {
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: $main-font !important;
   color: $custom-color-3;
-  // font-size: 62.5%;
 }
 
 .custom-color-title {
@@ -32,4 +32,11 @@ body {
 .custom-stroke {
   stroke: $custom-color-1;
   stroke-width: 1;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100vh;
 }

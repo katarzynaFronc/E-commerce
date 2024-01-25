@@ -6,7 +6,6 @@ import { ProductGrid } from "@/components/ProductGrid.component";
 import { SanityProduct } from "../../config/inventory";
 import { ProductSort } from "@/components/ProductSort.component";
 import { ProductFilter } from "@/components/ProductFilter.component";
-import { Footer } from "@/components/Footer.component";
 
 interface Props {
   searchParams: {
@@ -74,7 +73,6 @@ export default async function Home({ searchParams }: Props) {
           </section>
         </main>
       </div>
-      <Footer />
     </div>
   );
 }

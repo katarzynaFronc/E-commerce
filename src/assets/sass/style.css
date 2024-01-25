@@ -78,6 +78,7 @@ table {
 html,
 body {
   max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif !important;
   color: #2f3c4f;
@@ -96,6 +97,13 @@ body {
 .custom-stroke {
   stroke: #de703c;
   stroke-width: 1;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100vh;
 }
 
 .footer-container {
