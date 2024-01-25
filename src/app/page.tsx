@@ -50,12 +50,12 @@ export default async function Home({ searchParams }: Props) {
     <div>
       <div className="px-4 pt-20 mt-4 text-center">
         <h1 className="fs-1 fw-bolder">{siteConfig.name}</h1>
-        <p className="fs-4 mx-auto mt-4 mb-4">{siteConfig.description}</p>
+        <p className="fs-4 mx-auto mt-4 mb-4 lh-base">{siteConfig.description}</p>
       </div>
       <div>
         <main className="mx-auto w-75 max-w-6xl px-6">
           <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-2 pt-24 dark:border-gray-800  border-bottom">
-            <p className="fs-5">
+            <p className="fs-5 mb-3 mb-md-0">
               {" "}
               {products.length} product{products.length === 1 ? "" : "s"}
             </p>

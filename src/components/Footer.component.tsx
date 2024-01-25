@@ -4,8 +4,8 @@ export const Footer = () => {
   return (
     <div className="footer-container container-fluid  align-items-end">
       <div className="row justify-content-around px-5 py-3">
-        <div className="col-md-8 d-flex flex-column">
-          <p className="small mb-3">Copyright © 2024 KF</p>
+        <div className="mb-3 mb-md-0 col-md-8 d-flex flex-column">
+          <p className="small mb-2 mb-md-3">Copyright © 2024 KF</p>
           <p className="small">All rights reserved</p>
         </div>
         <div className="col-md-2">

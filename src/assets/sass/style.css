@@ -269,20 +269,4 @@ body {
 .form-select:focus {
   box-shadow: none;
   border: 1px solid #506f86;
-}
-
-.form-select option:hover,
-.form-select option:focus {
-  background-color: #f3969a; /* Change this to your preferred color */
-  color: #ffffff; /* Change this to your preferred color */
-}
-
-select option {
-  --bs-btn-hover-bg: red;
-}
-
-.form-select-option:hover {
-  background-color: #fbb040;
-  color: #fbb040;
-  background: none;
 }/*# sourceMappingURL=style.css.map */

@@ -2,9 +2,6 @@
 @import "./../utilities/variables";
 
 .form-select {
-  //   --bs-border-color: $custom-color-3;
-  //   --bs-border-radius: 0.5rem;
-
   border: 1px solid $custom-color-2;
   cursor: pointer;
 }
@@ -12,34 +9,4 @@
 .form-select:focus {
   box-shadow: none;
   border: 1px solid $custom-color-2;
-}
-// select option:hover,
-// select option:focus {
-//   background-color: #f3969a; /* Change this to your preferred color */
-//   color: #ffffff; /* Change this to your preferred color */
-// }
-
-.form-select option:hover,
-.form-select option:focus {
-  background-color: #f3969a; /* Change this to your preferred color */
-  color: #ffffff; /* Change this to your preferred color */
-}
-
-// .form-select option:checked {
-//   background-color: red !important;
-//   color: white;
-// }
-
-select option {
-  --bs-btn-hover-bg: red;
-  $form-select-focus-border-color: red;
-  $form-select-indicator-color: red;
-}
-
-.form-select-option {
-  &:hover {
-    background-color: $custom-color-4;
-    color: $custom-color-4;
-    background: none;
-  }
 }

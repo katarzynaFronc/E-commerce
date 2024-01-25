@@ -7,7 +7,7 @@ export default function Page() {
       <main className="d-flex flex-column align-items-center mt-4">
         <p className="mb-5 fs-1 fw-bolder">Shopping Cart</p>
         <div>
-          <p className="fs-4 fw-bold mb-3">Items in your shopping cart:</p>
+          <p className="fs-4 fw-bold mb-3 ms-2">Items in your shopping cart:</p>
           <div className="d-md-flex">
             <Cartitems />
             <CartSummary />
