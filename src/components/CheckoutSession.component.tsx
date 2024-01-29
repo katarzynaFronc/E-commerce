@@ -15,7 +15,7 @@ export function CheckoutSession({ customerDetails }: Props) {
     if (customerDetails) {
       clearCart();
     }
-  }, [clearCart, customerDetails]);
+  }, [customerDetails]);
 
   if (!customerDetails) {
     return (
@@ -26,13 +26,13 @@ export function CheckoutSession({ customerDetails }: Props) {
   }
   return (
     <>
-      <h1 className="mt-4 text-3xl font-bold tracking-tight text-lime-500 dark:text-lime-400 sm:text-5xl">Order Successful!</h1>
-      <h3 className="mt-8 text-2xl leading-7">
-        Thank you, <span className="font-extrabold">{customerDetails.name}</span>!
-      </h3>
-      <p className="mt-8">
-        Check your purchase email {customerDetails.email}
-        <span className="mx-1 font-extrabold text-indigo-500">Email</span> for your invoice.
+      <p className="mb-5 mt-4 fs-1 fw-bolder custom-color">Order Successful!</p>
+      <p className="mt-4 fs-4">
+        Thank you, <span className="fw-bold">{customerDetails.name}</span>!
+      </p>
+      <p className="mt-4 fs-6">
+        Check your purchase email
+        <span className="custom-color"> {customerDetails.email}</span> for your invoice.
       </p>
     </>
   );
