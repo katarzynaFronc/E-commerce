@@ -27,12 +27,12 @@ export const ProductInfo = ({ product }: Props) => {
         <div className="d-flex mb-4">
           <p className="fw-bold">Themes: </p>
           {product.themes.map((theme: string, i: number) => (
-            <>
+            <React.Fragment key={`${i}-${theme}`}>
               {i > 0 && ", "}
               <p key={theme} className="ms-2">
                 {theme}
               </p>
-            </>
+            </React.Fragment>
           ))}
         </div>
         <div className="d-flex">

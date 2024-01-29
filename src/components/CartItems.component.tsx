@@ -26,7 +26,7 @@ export const Cartitems = () => {
   return (
     <ListGroup className="m-0 p-0">
       {cartItems.map((product, productIdx) => (
-        <ListGroup.Item key={"product._id"} className="d-flex justify-content-between pb-3">
+        <ListGroup.Item key={product._id} className="d-flex justify-content-between pb-3">
           <div>
             <Image src={urlForImage(product.images[0]).url()} alt={`Main ${product.name} image`} width={100} height={150} className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg" />
           </div>
