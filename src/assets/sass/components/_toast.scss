@@ -1,0 +1,10 @@
+@import "./../utilities/variables";
+
+.toast-header {
+  background-color: $custom-color-4;
+}
+
+.toast-body {
+  background-color: $custom-color-1;
+  color: $primary-color;
+}

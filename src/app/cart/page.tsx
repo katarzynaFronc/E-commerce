@@ -5,9 +5,9 @@ export default function Page() {
   return (
     <>
       <main className="d-flex flex-column align-items-center mt-4">
-        <h3 className="mb-4">Shopping Cart</h3>
+        <p className="mb-5 fs-1 fw-bolder">Shopping Cart</p>
         <div>
-          <h4>Items in your shopping cart</h4>
+          <p className="fs-4 fw-bold mb-3 ms-2">Items in your shopping cart:</p>
           <div className="d-md-flex">
             <Cartitems />
             <CartSummary />

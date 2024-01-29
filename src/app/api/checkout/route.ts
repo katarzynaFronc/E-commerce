@@ -1,13 +1,20 @@
 import { NextResponse } from "next/server";
-
 import { validateCartItems } from "use-shopping-cart/utilities";
-
-import { inventory } from "../../../../config/inventory";
 import { stripe } from "../../../../lib/stripe";
+import { inventory } from "../../../../config/inventory";
 
 export async function POST(request: Request) {
   const cartDetails = await request.json();
-  const lineItems = validateCartItems(inventory, cartDetails);
+  console.log(inventory, cartDetails);
+
+  let lineItems;
+  try {
+    lineItems = validateCartItems(inventory, cartDetails);
+  } catch (error) {
+    console.error("Error validating cart items: ", error);
+    throw error;
+  }
+
   const origin = request.headers.get("origin");
   console.log(`Request received from origin: ${origin}`);
   const session = await stripe.checkout.sessions.create({
@@ -20,7 +27,7 @@ export async function POST(request: Request) {
     },
     shipping_options: [
       {
-        shipping_rate: "shr_1NxpLGGMAfiodSdkdU1iC0al",
+        shipping_rate: "shr_1OdwVpGMAfiodSdk5bddz56S",
       },
     ],
     billing_address_collection: "auto",

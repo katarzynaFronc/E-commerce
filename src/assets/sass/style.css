@@ -1,0 +1,280 @@
+@import "bootstrap/dist/css/bootstrap.css";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.1 | 20191019
+   License: none (public domain)
+*/
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap.css";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Open Sans", sans-serif !important;
+  color: #2f3c4f;
+}
+
+.custom-color-title {
+  color: #2f3c4f;
+}
+
+.custom-color {
+  fill: #de703c;
+  color: #de703c;
+  font-weight: bold;
+}
+
+.custom-stroke {
+  stroke: #de703c;
+  stroke-width: 1;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100vh;
+}
+
+.footer-container {
+  height: 10rem;
+  width: 100vw;
+  background-color: #506f86;
+  color: #fff;
+}
+
+.footer-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+.navbar-brand-logo {
+  width: auto;
+  height: 3.5rem;
+}
+
+.addToCartBtn {
+  background-color: #2f3c4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.addToCartBtn:hover {
+  background-color: #506f86;
+}
+.addToCartBtn:focus {
+  background-color: #2f3c4f;
+}
+.addToCartBtn:active {
+  background-color: #506f86 !important;
+}
+.addToCartBtn:disabled {
+  background-color: #506f86 !important;
+}
+
+.searchBtn {
+  background-color: #2f3c4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.searchBtn:hover {
+  background-color: #506f86;
+}
+.searchBtn:focus {
+  background-color: #2f3c4f;
+}
+.searchBtn:active {
+  background-color: #506f86 !important;
+}
+.searchBtn:disabled {
+  background-color: #506f86 !important;
+}
+
+.openCart {
+  background-color: #2f3c4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background-color: #de703c;
+  color: #fff;
+  border: 1px solid #de703c;
+}
+.openCart:hover {
+  background-color: #506f86;
+}
+.openCart:focus {
+  background-color: #2f3c4f;
+}
+.openCart:active {
+  background-color: #506f86 !important;
+}
+.openCart:disabled {
+  background-color: #506f86 !important;
+}
+.openCart:hover {
+  background-color: #fbb040;
+  border: 1px solid #de703c;
+  border-radius: 0.5rem;
+  color: #16161d;
+}
+.openCart:focus {
+  background-color: #de703c;
+}
+.openCart:active {
+  background-color: #fbb040 !important;
+}
+
+.checkoutBtn {
+  background-color: #2f3c4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.checkoutBtn:hover {
+  background-color: #506f86;
+}
+.checkoutBtn:focus {
+  background-color: #2f3c4f;
+}
+.checkoutBtn:active {
+  background-color: #506f86 !important;
+}
+.checkoutBtn:disabled {
+  background-color: #506f86 !important;
+}
+
+.form-control {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-color: #506f86;
+}
+
+.form-control:hover {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-color: #2f3c4f;
+}
+
+.form-control:focus {
+  border-radius: 0.5rem 0 0 0.5rem;
+  border-color: #2f3c4f;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #2f3c4f;
+}
+
+.form-check-input {
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: #2f3c4f;
+}
+
+.form-check-input:focus {
+  border-color: #506f86;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #506f86;
+  color: #fff;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item {
+  border-color: #506f86;
+}
+
+.toast-header {
+  background-color: #fbb040;
+}
+
+.toast-body {
+  background-color: #de703c;
+  color: #fff;
+}
+
+.form-select {
+  border: 1px solid #506f86;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  box-shadow: none;
+  border: 1px solid #506f86;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,16 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
+@import "./../../../node_modules/reset-css/sass/reset";
+
+@import "./base/base";
+
+@import "./components/footer";
+@import "./components/header";
+@import "./components/buttons";
+@import "./components/input";
+@import "./components/filter";
+@import "./components/toast";
+@import "./components/sort";
+
+@import "./utilities/mixins";
+@import "./utilities/variables";

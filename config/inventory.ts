@@ -1,4 +1,6 @@
 import { Image } from "sanity";
+import { client } from "../sanity/lib/client";
+import { groq } from "next-sanity";
 
 interface InventoryProduct {
   id: string;
@@ -26,4 +28,17 @@ export interface SanityProduct extends Omit<InventoryProduct, "images"> {
   slug: string;
 }
 
-export const inventory: InventoryProduct[] = [];
+export const inventory = await client.fetch<SanityProduct[]>(groq`*[_type == "product"]{
+  _id,
+  _createdAt,
+  "id": _id,
+  name,
+  sku,
+  images,
+  price,
+  currency,
+  sizes,
+  categories,
+  themes,
+  "slug": slug.current
+}`);

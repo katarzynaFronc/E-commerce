@@ -1,0 +1,12 @@
+@import "./../utilities/mixins";
+@import "./../utilities/variables";
+
+.form-select {
+  border: 1px solid $custom-color-2;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  box-shadow: none;
+  border: 1px solid $custom-color-2;
+}

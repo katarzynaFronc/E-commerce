@@ -1,0 +1,23 @@
+@mixin primaryBtn {
+  background-color: $custom-color-3;
+  color: $primary-color;
+  border: none;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $custom-color-2;
+  }
+
+  &:focus {
+    background-color: $custom-color-3;
+  }
+
+  &:active {
+    background-color: $custom-color-2 !important;
+  }
+
+  &:disabled {
+    background-color: $custom-color-2 !important;
+  }
+}

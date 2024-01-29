@@ -44,12 +44,12 @@ export const ProductFilter = () => {
           <Accordion.Item eventKey={`item-${i}`}>
             <Accordion.Header>
               {section.name}
-              {searchParams?.get(section.id) ? `(${searchParams.get(section.id)})` : ""}
+              <small className="text-uppercase">{searchParams?.get(section.id) ? `(${searchParams.get(section.id)})` : ""}</small>
             </Accordion.Header>
             <Accordion.Body>
-              <div className="space-y-4">
+              <div>
                 {section.options.map((option, optionIdx) => (
-                  <div key={option.value} className="flex items-center space-x-2">
+                  <div key={option.value} className="d-flex align-items-center px-2 py-1">
                     <input
                       type="checkbox"
                       className="form-check-input"

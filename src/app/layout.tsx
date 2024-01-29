@@ -1,20 +1,14 @@
 "use client";
 import { Header } from "@/components/Header.component";
 
-import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "../assets/sass/style.css";
 
 import { CartProvider } from "use-shopping-cart";
-
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: "500",
-});
+import { Footer } from "@/components/Footer.component";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string;
+  const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string;
 
   return (
     <html>
@@ -23,10 +17,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </head>
       <html>
-        <body className={poppins.className}>
-          <CartProvider cartMode="checkout-session" stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!} currency="PLN" shouldPersist={true}>
-            <Header />
-            {children}
+        <body>
+          <CartProvider cartMode="checkout-session" stripe={stripeKey} currency="PLN" shouldPersist={true}>
+            <div className="page-wrapper">
+              <Header />
+              {children}
+              <div className="mt-auto">
+                <Footer />
+              </div>
+            </div>
           </CartProvider>
         </body>
       </html>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 const sortOptions = [
   { name: "Newest", value: "/?date=desc" },
   { name: "Price, low to high", value: "/?price=asc" },
@@ -7,20 +9,20 @@ const sortOptions = [
 ];
 
 export const ProductSort = () => {
+  const router = useRouter();
   return (
     <div className="flex items-center">
       <select
         className="form-select w-auto"
-        onChange={(e) => {
-          const selectedValue = e.target.value;
-          window.location.href = selectedValue;
+        onChange={(event) => {
+          router.replace(event.target.value);
         }}
         aria-label="Default select">
         <option value="" hidden>
           Sort By
         </option>
         {sortOptions.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={option.name} value={option.value}>
             {option.name}
           </option>
         ))}

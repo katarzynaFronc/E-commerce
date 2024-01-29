@@ -1,0 +1,29 @@
+@import "./../utilities/mixins";
+@import "./../utilities/variables";
+
+.form-check-input {
+  margin: 0;
+}
+
+.form-check-input:checked {
+  background-color: $custom-color-3;
+}
+
+.form-check-input:focus {
+  border-color: $custom-color-2;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: $custom-color-2;
+  color: $primary-color;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-item {
+  border-color: $custom-color-2;
+}
