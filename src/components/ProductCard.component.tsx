@@ -20,10 +20,11 @@ export const ProductCard = ({ product }: Props) => {
           <p className="fs-5 fw-bold mt-2 mb-2 text-center">{product.name}</p>
           <p className="text-center custom-color mb-4">
             {" "}
-            {formatCurrencyString({
-              currency: product.currency,
-              value: product.price,
-            })}
+            {product.currency &&
+              formatCurrencyString({
+                currency: product.currency,
+                value: product.price,
+              })}
           </p>
         </div>
       </Link>
