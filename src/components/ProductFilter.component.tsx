@@ -20,14 +20,18 @@ const filters = [
     options: [
       { value: "christmas", label: "Christmas" },
       { value: "everyday", label: "Everyday" },
+      { value: "winter", label: "Winter" },
+      { value: "spring", label: "Spring" },
+      { value: "flowers", label: "Flowers" },
     ],
   },
   {
     id: "size",
     name: "Size",
     options: [
-      { value: "2x3", label: "2x3" },
-      { value: "3x4", label: "3x4" },
+      { value: "7,5x15", label: "7,5x15" },
+      { value: "10x15", label: "10x15" },
+      { value: "30x30", label: "30x30" },
     ],
   },
 ];
