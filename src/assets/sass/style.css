@@ -217,6 +217,25 @@ body {
   background-color: #506f86 !important;
 }
 
+.goBackBtn {
+  background-color: #2f3c4f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.goBackBtn:hover {
+  background-color: #506f86;
+}
+.goBackBtn:focus {
+  background-color: #2f3c4f;
+}
+.goBackBtn:active {
+  background-color: #506f86 !important;
+}
+.goBackBtn:disabled {
+  background-color: #506f86 !important;
+}
+
 .form-control {
   border-radius: 0.5rem 0 0 0.5rem;
   border-color: #506f86;

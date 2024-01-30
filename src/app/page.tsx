@@ -45,8 +45,6 @@ export default async function Home({ searchParams }: Props) {
     "slug": slug.current
   }`);
 
-  products.forEach((product) => console.log("id: ", product._id));
-
   return (
     <div>
       <div className="px-4 pt-20 mt-4 text-center">

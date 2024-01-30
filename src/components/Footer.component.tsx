@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const Footer = () => {
   return (
     <div className="footer-container container-fluid  align-items-end">

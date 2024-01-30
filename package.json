@@ -36,6 +36,7 @@
     "react-router-dom": "^6.16.0",
     "reset-css": "^5.0.2",
     "sanity": "^3.16.7",
+    "stripe": "^13.9.0",
     "sass": "^1.70.0",
     "styled-components": "5.2",
     "typescript": "5.2.2",
