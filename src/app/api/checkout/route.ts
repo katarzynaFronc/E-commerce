@@ -5,7 +5,6 @@ import { inventory } from "../../../../config/inventory";
 
 export async function POST(request: Request) {
   const cartDetails = await request.json();
-  console.log(inventory, cartDetails);
 
   let lineItems;
   try {
@@ -16,7 +15,7 @@ export async function POST(request: Request) {
   }
 
   const origin = request.headers.get("origin");
-  console.log(`Request received from origin: ${origin}`);
+
   const session = await stripe.checkout.sessions.create({
     submit_type: "pay",
     mode: "payment",
