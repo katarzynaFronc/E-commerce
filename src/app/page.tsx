@@ -51,6 +51,9 @@ export default async function Home({ searchParams }: Props) {
         <h1 className="fs-1 fw-bolder">{siteConfig.name}</h1>
         <p className="fs-4 mx-auto mt-4 mb-4 lh-base">{siteConfig.description}</p>
       </div>
+      <picture className="d-flex justify-content-center m-auto mb-4 ">
+        <img src="/bg-image.png" alt={`Main image`} className="main-image shadow p-3 mb-2 bg-body "></img>
+      </picture>
       <div>
         <main className="mx-auto w-75 max-w-6xl px-6">
           <div className="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between items-center border-b border-gray-200 pb-2 pt-24 dark:border-gray-800  border-bottom">
