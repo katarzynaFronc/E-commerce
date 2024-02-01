@@ -29,7 +29,7 @@ const filters = [
     id: "size",
     name: "Size",
     options: [
-      { value: "7,5x15", label: "7,5x15" },
+      { value: "7,5x10", label: "7,5x10" },
       { value: "10x15", label: "10x15" },
       { value: "30x30", label: "30x30" },
     ],
