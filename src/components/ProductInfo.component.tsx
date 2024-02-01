@@ -36,7 +36,7 @@ export const ProductInfo = ({ product }: Props) => {
           ))}
         </div>
         <div className="d-flex">
-          <p className="fw-bold">Size:</p>
+          <p className="fw-bold">Size: </p>
           <p>{product.sizes}</p>
         </div>
       </div>
