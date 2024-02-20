@@ -15,7 +15,7 @@ export const ProductSort = () => {
       <select
         className="form-select w-auto"
         onChange={(event) => {
-          router.replace(event.target.value);
+          router.push(event.target.value);
         }}
         aria-label="Default select">
         <option value="" hidden>

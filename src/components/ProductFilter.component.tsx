@@ -69,7 +69,7 @@ export const ProductFilter = () => {
                           params.delete(section.id);
                         }
 
-                        router.replace(`/?${params.toString()}`);
+                        router.push(`/?${params.toString()}`);
                       }}
                     />
                     <label htmlFor={`filter-${section.id}-${optionIdx}`} className="form-check-label ps-2">
